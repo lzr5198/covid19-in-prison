@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-d7034637ae9e3cf241d46de4d31ea3ad"}, "mark": "bar", "encoding": {"tooltip": [{"field": "facility", "type": "nominal"}, {"field": "death rate (%)", "type": "quantitative"}], "x": {"field": "death rate (%)", "type": "quantitative"}, "y": {"field": "facility", "sort": "-x", "type": "nominal"}}, "title": {"text": ["Inmate death rate"]}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-d7034637ae9e3cf241d46de4d31ea3ad": [{"facility": "Detention center", "infection rate (%)": 0.0, "death rate (%)": 0.0}, {"facility": "Reservation jail", "infection rate (%)": 0.0, "death rate (%)": 0.0}, {"facility": "U.S. Marshalls", "infection rate (%)": 0.0, "death rate (%)": 0.0}, {"facility": "State halfway house", "infection rate (%)": 21.93808882907133, "death rate (%)": 0.2018842530282638}, {"facility": "State facility", "infection rate (%)": 26.53850903552464, "death rate (%)": 0.5557156382497016}, {"facility": "State prison", "infection rate (%)": 33.25567130457896, "death rate (%)": 0.2085527055624278}, {"facility": "State juvenile detention", "infection rate (%)": 37.77630708140304, "death rate (%)": 0.0132362673726009}, {"facility": "Federal prison", "infection rate (%)": 39.47671391591931, "death rate (%)": 0.1745264686255674}, {"facility": "State rehabilitation center", "infection rate (%)": 48.17642069550466, "death rate (%)": 0.2968617472434266}, {"facility": "Juvenile detention at jail", "infection rate (%)": 50.58365758754864, "death rate (%)": 0.0}, {"facility": "Federal halfway house", "infection rate (%)": 57.91027154663519, "death rate (%)": 0.7083825265643447}, {"facility": "State work camp", "infection rate (%)": 67.40554156171285, "death rate (%)": 0.0}, {"facility": "Jail", "infection rate (%)": 73.20690911340377, "death rate (%)": 0.0762944277574249}, {"facility": "Low-security work release", "infection rate (%)": 83.93194706994329, "death rate (%)": 0.0}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

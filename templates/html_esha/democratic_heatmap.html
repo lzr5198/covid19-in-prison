@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "background": "white",
+  "padding": 5,
+  "style": "cell",
+  "data": [
+    {
+      "name": "data-8927985f9c7824ce59d1cb2458b2c376",
+      "values": [
+        {
+          "state": "Arizona",
+          "affiliation": "AZ",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 21
+        },
+        {
+          "state": "California",
+          "affiliation": "CA",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 31
+        },
+        {
+          "state": "Colorado",
+          "affiliation": "CO",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 46
+        },
+        {
+          "state": "Connecticut",
+          "affiliation": "CT",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 37
+        },
+        {
+          "state": "Delaware",
+          "affiliation": "DE",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 30
+        },
+        {
+          "state": "Georgia",
+          "affiliation": "GA",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 1
+        },
+        {
+          "state": "Hawaii",
+          "affiliation": "HI",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 43
+        },
+        {
+          "state": "Illinois",
+          "affiliation": "IL",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 26
+        },
+        {
+          "state": "Maine",
+          "affiliation": "ME",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 4
+        },
+        {
+          "state": "Maryland",
+          "affiliation": "MD",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 10
+        },
+        {
+          "state": "Massachusetts",
+          "affiliation": "MA",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 32
+        },
+        {
+          "state": "Michigan",
+          "affiliation": "MI",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 48
+        },
+        {
+          "state": "Minnesota",
+          "affiliation": "MN",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 38
+        },
+        {
+          "state": "Nevada",
+          "affiliation": "NV",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 29
+        },
+        {
+          "state": "New Hampshire",
+          "affiliation": "NH",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 12
+        },
+        {
+          "state": "New Jersey",
+          "affiliation": "NJ",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 20
+        },
+        {
+          "state": "New Mexico",
+          "affiliation": "NM",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 36
+        },
+        {
+          "state": "New York",
+          "affiliation": "NY",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 6
+        },
+        {
+          "state": "Oregon",
+          "affiliation": "OR",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 17
+        },
+        {
+          "state": "Pennsylvania",
+          "affiliation": "PA",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 16
+        },
+        {
+          "state": "Rhode Island",
+          "affiliation": "RI",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 42
+        },
+        {
+          "state": "Vermont",
+          "affiliation": "VT",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 23
+        },
+        {
+          "state": "Virginia",
+          "affiliation": "VA",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 24
+        },
+        {
+          "state": "Washington",
+          "affiliation": "WA",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 28
+        },
+        {
+          "state": "Wisconsin",
+          "affiliation": "WI",
+          "affiliation.1": "Democratic",
+          "attribute": "pos_rate_rank",
+          "rank": 39
+        },
+        {
+          "state": "Arizona",
+          "affiliation": "AZ",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 11
+        },
+        {
+          "state": "California",
+          "affiliation": "CA",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 24
+        },
+        {
+          "state": "Colorado",
+          "affiliation": "CO",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 31
+        },
+        {
+          "state": "Connecticut",
+          "affiliation": "CT",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 28
+        },
+        {
+          "state": "Delaware",
+          "affiliation": "DE",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 38
+        },
+        {
+          "state": "Georgia",
+          "affiliation": "GA",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 25
+        },
+        {
+          "state": "Hawaii",
+          "affiliation": "HI",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 46
+        },
+        {
+          "state": "Illinois",
+          "affiliation": "IL",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 37
+        },
+        {
+          "state": "Maine",
+          "affiliation": "ME",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 2
+        },
+        {
+          "state": "Maryland",
+          "affiliation": "MD",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 13
+        },
+        {
+          "state": "Massachusetts",
+          "affiliation": "MA",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 39
+        },
+        {
+          "state": "Michigan",
+          "affiliation": "MI",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 47
+        },
+        {
+          "state": "Minnesota",
+          "affiliation": "MN",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 18
+        },
+        {
+          "state": "Nevada",
+          "affiliation": "NV",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 50
+        },
+        {
+          "state": "New Hampshire",
+          "affiliation": "NH",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 14
+        },
+        {
+          "state": "New Jersey",
+          "affiliation": "NJ",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 44
+        },
+        {
+          "state": "New Mexico",
+          "affiliation": "NM",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 49
+        },
+        {
+          "state": "New York",
+          "affiliation": "NY",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 5
+        },
+        {
+          "state": "Oregon",
+          "affiliation": "OR",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 40
+        },
+        {
+          "state": "Pennsylvania",
+          "affiliation": "PA",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 41
+        },
+        {
+          "state": "Rhode Island",
+          "affiliation": "RI",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 8
+        },
+        {
+          "state": "Vermont",
+          "affiliation": "VT",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 1
+        },
+        {
+          "state": "Virginia",
+          "affiliation": "VA",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 27
+        },
+        {
+          "state": "Washington",
+          "affiliation": "WA",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 7
+        },
+        {
+          "state": "Wisconsin",
+          "affiliation": "WI",
+          "affiliation.1": "Democratic",
+          "attribute": "death_rate_rank",
+          "rank": 12
+        },
+        {
+          "state": "Arizona",
+          "affiliation": "AZ",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 38
+        },
+        {
+          "state": "California",
+          "affiliation": "CA",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 40
+        },
+        {
+          "state": "Colorado",
+          "affiliation": "CO",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 8
+        },
+        {
+          "state": "Connecticut",
+          "affiliation": "CT",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 10
+        },
+        {
+          "state": "Delaware",
+          "affiliation": "DE",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 27
+        },
+        {
+          "state": "Georgia",
+          "affiliation": "GA",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 49
+        },
+        {
+          "state": "Hawaii",
+          "affiliation": "HI",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 25
+        },
+        {
+          "state": "Illinois",
+          "affiliation": "IL",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 5
+        },
+        {
+          "state": "Maine",
+          "affiliation": "ME",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 16
+        },
+        {
+          "state": "Maryland",
+          "affiliation": "MD",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 26
+        },
+        {
+          "state": "Massachusetts",
+          "affiliation": "MA",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 17
+        },
+        {
+          "state": "Michigan",
+          "affiliation": "MI",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 3
+        },
+        {
+          "state": "Minnesota",
+          "affiliation": "MN",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 9
+        },
+        {
+          "state": "Nevada",
+          "affiliation": "NV",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 39
+        },
+        {
+          "state": "New Hampshire",
+          "affiliation": "NH",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 46
+        },
+        {
+          "state": "New Jersey",
+          "affiliation": "NJ",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 4
+        },
+        {
+          "state": "New Mexico",
+          "affiliation": "NM",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 11
+        },
+        {
+          "state": "New York",
+          "affiliation": "NY",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 33
+        },
+        {
+          "state": "Oregon",
+          "affiliation": "OR",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 32
+        },
+        {
+          "state": "Pennsylvania",
+          "affiliation": "PA",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 34
+        },
+        {
+          "state": "Rhode Island",
+          "affiliation": "RI",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 2
+        },
+        {
+          "state": "Vermont",
+          "affiliation": "VT",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 7
+        },
+        {
+          "state": "Virginia",
+          "affiliation": "VA",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 24
+        },
+        {
+          "state": "Washington",
+          "affiliation": "WA",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 47
+        },
+        {
+          "state": "Wisconsin",
+          "affiliation": "WI",
+          "affiliation.1": "Democratic",
+          "attribute": "test_rate_rank",
+          "rank": 15
+        },
+        {
+          "state": "Arizona",
+          "affiliation": "AZ",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": null
+        },
+        {
+          "state": "California",
+          "affiliation": "CA",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": 9.722222222
+        },
+        {
+          "state": "Colorado",
+          "affiliation": "CO",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": 16.66666667
+        },
+        {
+          "state": "Connecticut",
+          "affiliation": "CT",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": 26.38888889
+        },
+        {
+          "state": "Delaware",
+          "affiliation": "DE",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": 38.88888889
+        },
+        {
+          "state": "Georgia",
+          "affiliation": "GA",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": 50
+        },
+        {
+          "state": "Hawaii",
+          "affiliation": "HI",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": 25
+        },
+        {
+          "state": "Illinois",
+          "affiliation": "IL",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": 19.44444444
+        },
+        {
+          "state": "Maine",
+          "affiliation": "ME",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": null
+        },
+        {
+          "state": "Maryland",
+          "affiliation": "MD",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": 34.72222222
+        },
+        {
+          "state": "Massachusetts",
+          "affiliation": "MA",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": 4.166666667
+        },
+        {
+          "state": "Michigan",
+          "affiliation": "MI",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": 23.61111111
+        },
+        {
+          "state": "Minnesota",
+          "affiliation": "MN",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": 27.77777778
+        },
+        {
+          "state": "Nevada",
+          "affiliation": "NV",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": null
+        },
+        {
+          "state": "New Hampshire",
+          "affiliation": "NH",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": 18.05555556
+        },
+        {
+          "state": "New Jersey",
+          "affiliation": "NJ",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": 13.88888889
+        },
+        {
+          "state": "New Mexico",
+          "affiliation": "NM",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": 29.16666667
+        },
+        {
+          "state": "New York",
+          "affiliation": "NY",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": 43.05555556
+        },
+        {
+          "state": "Oregon",
+          "affiliation": "OR",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": null
+        },
+        {
+          "state": "Pennsylvania",
+          "affiliation": "PA",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": 37.5
+        },
+        {
+          "state": "Rhode Island",
+          "affiliation": "RI",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": 2.777777778
+        },
+        {
+          "state": "Vermont",
+          "affiliation": "VT",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": 45.83333333
+        },
+        {
+          "state": "Virginia",
+          "affiliation": "VA",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": 5.555555556
+        },
+        {
+          "state": "Washington",
+          "affiliation": "WA",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": 36.11111111
+        },
+        {
+          "state": "Wisconsin",
+          "affiliation": "WI",
+          "affiliation.1": "Democratic",
+          "attribute": "vac_rate_rank",
+          "rank": 40.27777778
+        }
+      ]
+    },
+    {
+      "name": "data_0",
+      "source": "data-8927985f9c7824ce59d1cb2458b2c376",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"rank\"]) && isFinite(+datum[\"rank\"])"
+        }
+      ]
+    }
+  ],
+  "signals": [
+    {"name": "x_step", "value": 20},
+    {"name": "width", "update": "bandspace(domain('x').length, 0, 0) * x_step"},
+    {"name": "y_step", "value": 20},
+    {"name": "height", "update": "bandspace(domain('y').length, 0, 0) * y_step"}
+  ],
+  "marks": [
+    {
+      "name": "marks",
+      "type": "rect",
+      "style": ["rect"],
+      "from": {"data": "data_0"},
+      "encode": {
+        "update": {
+          "fill": {"scale": "color", "field": "rank"},
+          "tooltip": {"signal": "{\"Rank\": format(datum[\"rank\"], \"\")}"},
+          "description": {
+            "signal": "\"rank: \" + (format(datum[\"rank\"], \"\")) + \"; Rank: \" + (format(datum[\"rank\"], \"\")) + \"; state: \" + (isValid(datum[\"state\"]) ? datum[\"state\"] : \"\"+datum[\"state\"]) + \"; attribute: \" + (isValid(datum[\"attribute\"]) ? datum[\"attribute\"] : \"\"+datum[\"attribute\"])"
+          },
+          "x": {"scale": "x", "field": "state"},
+          "width": {"scale": "x", "band": 1},
+          "y": {"scale": "y", "field": "attribute"},
+          "height": {"scale": "y", "band": 1}
+        }
+      }
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "band",
+      "domain": {"data": "data_0", "field": "state", "sort": true},
+      "range": {"step": {"signal": "x_step"}},
+      "paddingInner": 0,
+      "paddingOuter": 0
+    },
+    {
+      "name": "y",
+      "type": "band",
+      "domain": {"data": "data_0", "field": "attribute", "sort": true},
+      "range": {"step": {"signal": "y_step"}},
+      "paddingInner": 0,
+      "paddingOuter": 0
+    },
+    {
+      "name": "color",
+      "type": "linear",
+      "domain": {"data": "data_0", "field": "rank"},
+      "range": {"scheme": "blues"},
+      "interpolate": "hcl",
+      "zero": false
+    }
+  ],
+  "axes": [
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "grid": false,
+      "title": "state",
+      "labelAlign": "right",
+      "labelAngle": 270,
+      "labelBaseline": "middle",
+      "zindex": 1
+    },
+    {"scale": "y", "orient": "left", "grid": false, "zindex": 1}
+  ],
+  "legends": [
+    {
+      "fill": "color",
+      "gradientLength": {"signal": "clamp(height, 64, 200)"},
+      "title": "rank"
+    }
+  ]
+}
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

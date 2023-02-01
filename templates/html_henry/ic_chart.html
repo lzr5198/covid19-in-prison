@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 200}}, "data": {"name": "data-9fb5f8fc0bd470a1f74b6f1c5c82f8f6"}, "mark": "arc", "encoding": {"color": {"field": "facility", "legend": null, "scale": {"range": ["#46f0f0", "#911eb4", "#f58231", "#4363d8", "#9a6324", "#e6194b", "#fabebe", "#ffe119", "#e6beff", "#bcf60c", "#3cb44b", "#f032e6", "#008080", "#fffac8"]}, "sort": "ascending"}, "theta": {"field": "inmate case", "type": "quantitative"}, "tooltip": [{"field": "facility", "type": "nominal"}, {"field": "inmate case", "type": "quantitative"}]}, "title": {"text": ["Inmate cases"]}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-9fb5f8fc0bd470a1f74b6f1c5c82f8f6": [{"facility": "Low-security work release", "inmate case": 444.0, "inmate death": 0.0, "officer case": 97.0, "officer death": 0.0, "color": "#e6194b"}, {"facility": "State prison", "inmate case": 325297.0, "inmate death": 2040.0, "officer case": 72332.0, "officer death": 125.0, "color": "#3cb44b"}, {"facility": "State facility", "inmate case": 6447.0, "inmate death": 135.0, "officer case": 2729.0, "officer death": 10.0, "color": "#ffe119"}, {"facility": "Jail", "inmate case": 106508.0, "inmate death": 111.0, "officer case": 32043.0, "officer death": 78.0, "color": "#4363d8"}, {"facility": "Federal prison", "inmate case": 53834.0, "inmate death": 238.0, "officer case": 25.0, "officer death": 0.0, "color": "#f58231"}, {"facility": "Federal halfway house", "inmate case": 981.0, "inmate death": 12.0, "officer case": 0.0, "officer death": 0.0, "color": "#911eb4"}, {"facility": "Detention center", "inmate case": 10582.0, "inmate death": 9.0, "officer case": 3.0, "officer death": 0.0, "color": "#46f0f0"}, {"facility": "State rehabilitation center", "inmate case": 1136.0, "inmate death": 7.0, "officer case": 356.0, "officer death": 0.0, "color": "#f032e6"}, {"facility": "State juvenile detention", "inmate case": 2854.0, "inmate death": 1.0, "officer case": 3137.0, "officer death": 4.0, "color": "#bcf60c"}, {"facility": "Reservation jail", "inmate case": 9.0, "inmate death": 0.0, "officer case": 0.0, "officer death": 0.0, "color": "#fabebe"}, {"facility": "State work camp", "inmate case": 1338.0, "inmate death": 0.0, "officer case": 801.0, "officer death": 0.0, "color": "#008080"}, {"facility": "State halfway house", "inmate case": 326.0, "inmate death": 3.0, "officer case": 54.0, "officer death": 0.0, "color": "#e6beff"}, {"facility": "Juvenile detention at jail", "inmate case": 130.0, "inmate death": 0.0, "officer case": 166.0, "officer death": 0.0, "color": "#9a6324"}, {"facility": "U.S. Marshalls", "inmate case": 0.0, "inmate death": 0.0, "officer case": 0.0, "officer death": 0.0, "color": "#fffac8"}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

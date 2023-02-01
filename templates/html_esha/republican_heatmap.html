@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "background": "white",
+  "padding": 5,
+  "style": "cell",
+  "data": [
+    {
+      "name": "data-3acae4e337beba19bc7e8a39882634e5",
+      "values": [
+        {
+          "state": "Alabama",
+          "abbreviation": "AL",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 2
+        },
+        {
+          "state": "Alaska",
+          "abbreviation": "AK",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 35
+        },
+        {
+          "state": "Arkansas",
+          "abbreviation": "AR",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 49
+        },
+        {
+          "state": "Florida",
+          "abbreviation": "FL",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 13
+        },
+        {
+          "state": "Idaho",
+          "abbreviation": "ID",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 41
+        },
+        {
+          "state": "Indiana",
+          "abbreviation": "IN",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 5
+        },
+        {
+          "state": "Iowa",
+          "abbreviation": "IA",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 44
+        },
+        {
+          "state": "Kansas",
+          "abbreviation": "KS",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 45
+        },
+        {
+          "state": "Kentucky",
+          "abbreviation": "KY",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 50
+        },
+        {
+          "state": "Louisiana",
+          "abbreviation": "LA",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 14
+        },
+        {
+          "state": "Mississippi",
+          "abbreviation": "MS",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 3
+        },
+        {
+          "state": "Missouri",
+          "abbreviation": "MO",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 15
+        },
+        {
+          "state": "Montana",
+          "abbreviation": "MT",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 19
+        },
+        {
+          "state": "Nebraska",
+          "abbreviation": "NE",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 8
+        },
+        {
+          "state": "North Carolina",
+          "abbreviation": "NC",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 22
+        },
+        {
+          "state": "North Dakota",
+          "abbreviation": "ND",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 33
+        },
+        {
+          "state": "Ohio",
+          "abbreviation": "OH",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 9
+        },
+        {
+          "state": "Oklahoma",
+          "abbreviation": "OK",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 27
+        },
+        {
+          "state": "South Carolina",
+          "abbreviation": "SC",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 11
+        },
+        {
+          "state": "South Dakota",
+          "abbreviation": "SD",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 47
+        },
+        {
+          "state": "Tennessee",
+          "abbreviation": "TN",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 25
+        },
+        {
+          "state": "Texas",
+          "abbreviation": "TX",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 18
+        },
+        {
+          "state": "Utah",
+          "abbreviation": "UT",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 40
+        },
+        {
+          "state": "West Virginia",
+          "abbreviation": "WV",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 7
+        },
+        {
+          "state": "Wyoming",
+          "abbreviation": "WY",
+          "affiliation": "Republican",
+          "attribute": "pos_rate_rank",
+          "rank": 34
+        },
+        {
+          "state": "Alabama",
+          "abbreviation": "AL",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 43
+        },
+        {
+          "state": "Alaska",
+          "abbreviation": "AK",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 9
+        },
+        {
+          "state": "Arkansas",
+          "abbreviation": "AR",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 45
+        },
+        {
+          "state": "Florida",
+          "abbreviation": "FL",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 35
+        },
+        {
+          "state": "Idaho",
+          "abbreviation": "ID",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 4
+        },
+        {
+          "state": "Indiana",
+          "abbreviation": "IN",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 17
+        },
+        {
+          "state": "Iowa",
+          "abbreviation": "IA",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 34
+        },
+        {
+          "state": "Kansas",
+          "abbreviation": "KS",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 22
+        },
+        {
+          "state": "Kentucky",
+          "abbreviation": "KY",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 48
+        },
+        {
+          "state": "Louisiana",
+          "abbreviation": "LA",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 36
+        },
+        {
+          "state": "Mississippi",
+          "abbreviation": "MS",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 15
+        },
+        {
+          "state": "Missouri",
+          "abbreviation": "MO",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 26
+        },
+        {
+          "state": "Montana",
+          "abbreviation": "MT",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 16
+        },
+        {
+          "state": "Nebraska",
+          "abbreviation": "NE",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 10
+        },
+        {
+          "state": "North Carolina",
+          "abbreviation": "NC",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 21
+        },
+        {
+          "state": "North Dakota",
+          "abbreviation": "ND",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 3
+        },
+        {
+          "state": "Ohio",
+          "abbreviation": "OH",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 42
+        },
+        {
+          "state": "Oklahoma",
+          "abbreviation": "OK",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 23
+        },
+        {
+          "state": "South Carolina",
+          "abbreviation": "SC",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 32
+        },
+        {
+          "state": "South Dakota",
+          "abbreviation": "SD",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 30
+        },
+        {
+          "state": "Tennessee",
+          "abbreviation": "TN",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 29
+        },
+        {
+          "state": "Texas",
+          "abbreviation": "TX",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 19
+        },
+        {
+          "state": "Utah",
+          "abbreviation": "UT",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 33
+        },
+        {
+          "state": "West Virginia",
+          "abbreviation": "WV",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 6
+        },
+        {
+          "state": "Wyoming",
+          "abbreviation": "WY",
+          "affiliation": "Republican",
+          "attribute": "death_rate_rank",
+          "rank": 20
+        },
+        {
+          "state": "Alabama",
+          "abbreviation": "AL",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 44
+        },
+        {
+          "state": "Alaska",
+          "abbreviation": "AK",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 13
+        },
+        {
+          "state": "Arkansas",
+          "abbreviation": "AR",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 22
+        },
+        {
+          "state": "Florida",
+          "abbreviation": "FL",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 43
+        },
+        {
+          "state": "Idaho",
+          "abbreviation": "ID",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 20
+        },
+        {
+          "state": "Indiana",
+          "abbreviation": "IN",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 45
+        },
+        {
+          "state": "Iowa",
+          "abbreviation": "IA",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 12
+        },
+        {
+          "state": "Kansas",
+          "abbreviation": "KS",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 14
+        },
+        {
+          "state": "Kentucky",
+          "abbreviation": "KY",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 28
+        },
+        {
+          "state": "Louisiana",
+          "abbreviation": "LA",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 42
+        },
+        {
+          "state": "Mississippi",
+          "abbreviation": "MS",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 50
+        },
+        {
+          "state": "Missouri",
+          "abbreviation": "MO",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 21
+        },
+        {
+          "state": "Montana",
+          "abbreviation": "MT",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 29
+        },
+        {
+          "state": "Nebraska",
+          "abbreviation": "NE",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 36
+        },
+        {
+          "state": "North Carolina",
+          "abbreviation": "NC",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 19
+        },
+        {
+          "state": "North Dakota",
+          "abbreviation": "ND",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 1
+        },
+        {
+          "state": "Ohio",
+          "abbreviation": "OH",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 37
+        },
+        {
+          "state": "Oklahoma",
+          "abbreviation": "OK",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 35
+        },
+        {
+          "state": "South Carolina",
+          "abbreviation": "SC",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 48
+        },
+        {
+          "state": "South Dakota",
+          "abbreviation": "SD",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 30
+        },
+        {
+          "state": "Tennessee",
+          "abbreviation": "TN",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 31
+        },
+        {
+          "state": "Texas",
+          "abbreviation": "TX",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 23
+        },
+        {
+          "state": "Utah",
+          "abbreviation": "UT",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 18
+        },
+        {
+          "state": "West Virginia",
+          "abbreviation": "WV",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 41
+        },
+        {
+          "state": "Wyoming",
+          "abbreviation": "WY",
+          "affiliation": "Republican",
+          "attribute": "test_rate_rank",
+          "rank": 6
+        },
+        {
+          "state": "Alabama",
+          "abbreviation": "AL",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": null
+        },
+        {
+          "state": "Alaska",
+          "abbreviation": "AK",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": 11.11111111
+        },
+        {
+          "state": "Arkansas",
+          "abbreviation": "AR",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": null
+        },
+        {
+          "state": "Florida",
+          "abbreviation": "FL",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": null
+        },
+        {
+          "state": "Idaho",
+          "abbreviation": "ID",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": 44.44444444
+        },
+        {
+          "state": "Indiana",
+          "abbreviation": "IN",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": null
+        },
+        {
+          "state": "Iowa",
+          "abbreviation": "IA",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": 41.66666667
+        },
+        {
+          "state": "Kansas",
+          "abbreviation": "KS",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": 12.5
+        },
+        {
+          "state": "Kentucky",
+          "abbreviation": "KY",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": null
+        },
+        {
+          "state": "Louisiana",
+          "abbreviation": "LA",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": 33.33333333
+        },
+        {
+          "state": "Mississippi",
+          "abbreviation": "MS",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": null
+        },
+        {
+          "state": "Missouri",
+          "abbreviation": "MO",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": null
+        },
+        {
+          "state": "Montana",
+          "abbreviation": "MT",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": 22.22222222
+        },
+        {
+          "state": "Nebraska",
+          "abbreviation": "NE",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": 31.94444444
+        },
+        {
+          "state": "North Carolina",
+          "abbreviation": "NC",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": 30.55555556
+        },
+        {
+          "state": "North Dakota",
+          "abbreviation": "ND",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": 1.388888889
+        },
+        {
+          "state": "Ohio",
+          "abbreviation": "OH",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": 15.27777778
+        },
+        {
+          "state": "Oklahoma",
+          "abbreviation": "OK",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": 48.61111111
+        },
+        {
+          "state": "South Carolina",
+          "abbreviation": "SC",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": null
+        },
+        {
+          "state": "South Dakota",
+          "abbreviation": "SD",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": 6.944444444
+        },
+        {
+          "state": "Tennessee",
+          "abbreviation": "TN",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": null
+        },
+        {
+          "state": "Texas",
+          "abbreviation": "TX",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": 47.22222222
+        },
+        {
+          "state": "Utah",
+          "abbreviation": "UT",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": 8.333333333
+        },
+        {
+          "state": "West Virginia",
+          "abbreviation": "WV",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": null
+        },
+        {
+          "state": "Wyoming",
+          "abbreviation": "WY",
+          "affiliation": "Republican",
+          "attribute": "vac_rate_rank",
+          "rank": 20.83333333
+        }
+      ]
+    },
+    {
+      "name": "data_0",
+      "source": "data-3acae4e337beba19bc7e8a39882634e5",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"rank\"]) && isFinite(+datum[\"rank\"])"
+        }
+      ]
+    }
+  ],
+  "signals": [
+    {"name": "x_step", "value": 20},
+    {"name": "width", "update": "bandspace(domain('x').length, 0, 0) * x_step"},
+    {"name": "y_step", "value": 20},
+    {"name": "height", "update": "bandspace(domain('y').length, 0, 0) * y_step"}
+  ],
+  "marks": [
+    {
+      "name": "marks",
+      "type": "rect",
+      "style": ["rect"],
+      "from": {"data": "data_0"},
+      "encode": {
+        "update": {
+          "fill": {"scale": "color", "field": "rank"},
+          "tooltip": {"signal": "{\"Rank\": format(datum[\"rank\"], \"\")}"},
+          "description": {
+            "signal": "\"rank: \" + (format(datum[\"rank\"], \"\")) + \"; Rank: \" + (format(datum[\"rank\"], \"\")) + \"; state: \" + (isValid(datum[\"state\"]) ? datum[\"state\"] : \"\"+datum[\"state\"]) + \"; attribute: \" + (isValid(datum[\"attribute\"]) ? datum[\"attribute\"] : \"\"+datum[\"attribute\"])"
+          },
+          "x": {"scale": "x", "field": "state"},
+          "width": {"scale": "x", "band": 1},
+          "y": {"scale": "y", "field": "attribute"},
+          "height": {"scale": "y", "band": 1}
+        }
+      }
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "band",
+      "domain": {"data": "data_0", "field": "state", "sort": true},
+      "range": {"step": {"signal": "x_step"}},
+      "paddingInner": 0,
+      "paddingOuter": 0
+    },
+    {
+      "name": "y",
+      "type": "band",
+      "domain": {"data": "data_0", "field": "attribute", "sort": true},
+      "range": {"step": {"signal": "y_step"}},
+      "paddingInner": 0,
+      "paddingOuter": 0
+    },
+    {
+      "name": "color",
+      "type": "linear",
+      "domain": {"data": "data_0", "field": "rank"},
+      "range": {"scheme": "reds"},
+      "interpolate": "hcl",
+      "zero": false
+    }
+  ],
+  "axes": [
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "grid": false,
+      "title": "state",
+      "labelAlign": "right",
+      "labelAngle": 270,
+      "labelBaseline": "middle",
+      "zindex": 1
+    },
+    {"scale": "y", "orient": "left", "grid": false, "zindex": 1}
+  ],
+  "legends": [
+    {
+      "fill": "color",
+      "gradientLength": {"signal": "clamp(height, 64, 200)"},
+      "title": "rank"
+    }
+  ]
+}
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="jquery-csv.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="animation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+
+  <!--
+      //  Party Analysis
+      ///////////////////////////////////-->
+  <div class="page__style projects">
+    <div class="page__description">
+      <div id="projects">
+  
+        <button class="btn_nav home_link">Overview</button>
+        <button class="btn_nav projects_link">Party</button>
+        <button class="btn_nav skills_link">Facility</button>
+        <button class="btn_nav about_link">Group</button>
+        <button class="btn_nav contact_link">Correlation</button>
+
+        <h1>Party Analysis</h1>    
+
+        <div class="col">
+          <div id="party_map"></div>
+
+          <div class="row">
+            <div id ="heatmap1"></div>
+            <div id ="heatmap2"></div>
+          </div>
+        </div>
+       
+       
+
+  
+  
+      </div>
+    </div>
+  </div>
+  <!--
+      //  Facility Analysis
+      ///////////////////////////////////-->
+  <div class="page__style skills">
+    <div class="page__description">
+      <div id="skills">
+        <button class="btn_nav home_link">Overview</button>
+        <button class="btn_nav projects_link">Party</button>
+        <button class="btn_nav skills_link">Facility</button>
+        <button class="btn_nav about_link">Group</button>
+        <button class="btn_nav contact_link">Correlation</button>
+        <h1 id="grey">Facility Analysis</h1>
+        <br>
+        
+        <div class="col">
+          <div class="row">
+            <h3 id="grey">Contribution:</h3>
+            <select>
+              <option value="ic">Inmate cases</option>
+              <option value="id">Inmate deaths</option>
+              <option value="oc">Officer cases</option>
+              <option value="od">Officer deaths</option>
+            </select>
+            <h3 id="white">Positive/Death Rate:</h3>
+            <select>
+              <option value="inmate_death_rate">Inmate death rate</option>
+              <option value="inmate_pos_rate">Inmate positive rate</option>
+            </select>
+          </div>
+
+
+          <br>
+
+          <div class="row"> 
+            <div class="col">
+              <h3 id="grey">Contribution (by state)</h3>
+               
+              <div id="facility_map"></div>
+            </div>
+           
+  
+            <div class="col" id="col1">
+              <h3 id ="grey">Contribution (overall)</h3>
+              
+              <div id="facility_pie"></div>
+  
+              <h3 id="white">Positive/Death rate</h3>
+              <div id="facility_bar"></div>
+  
+              
+            </div>
+    
+          </div>
+
+          <br>
+
+          <p id="black">#The blank bar is missing data</p>
+        </div>
+        
+        
+  
+  
+      </div>
+    </div>
+  </div>
+  
+  <!--
+      //  Group Analysis
+      ///////////////////////////////////-->
+  <div class="page__style about">
+    <div class="page__description">
+      <div id="about">
+        <button class="btn_nav home_link">Overview</button>
+        <button class="btn_nav projects_link">Party</button>
+        <button class="btn_nav skills_link">Facility</button>
+        <button class="btn_nav about_link">Group</button>
+        <button class="btn_nav contact_link">Correlation</button>
+        
+        
+  
+        
+        <div class="col"> 
+          
+          <div class="row">
+            <div class="col">
+              <div class="row">
+                <h3>2 Group Comparison (By Difference)</h3>
+                <select>
+                  <option value="i_vs_o">Inmate v.s. Officer</option>
+                  <option value="i_vs_p">Inmate v.s. Public</option>
+                </select>
+              </div>              
+              <div id="difference_map"></div>
+            </div>
+
+            <div class="col">
+              <h3>3 Group Comparison</h3>
+              <div id="scatterplot"></div>
+            </div>
+            
+            
+          </div>
+
+          <div class="col">
+            <h3>2 Group Comparison (Details)</h3>
+            <div id="b_to_b"></div>
+          </div>
+          
+
+          <p>*The testing rate for officer is missing</p>
+
+        </div>
+
+        
+
+  
+      </div>
+    </div>
+  </div>
+  <!--
+      //  Correlation
+      ///////////////////////////////////-->
+  <div class="page__style contact">
+    <div class="page__description">
+      <div id="contact">
+        
+        <button class="btn_nav home_link">Overview</button>
+        <button class="btn_nav projects_link">Party</button>
+        <button class="btn_nav skills_link">Facility</button>
+        <button class="btn_nav about_link">Group</button>
+        <button class="btn_nav contact_link">Correlation</button>
+        <h1>Attribute Correlation</h1> 
+
+        <div class="row">
+          <div class="col">
+            <div class="row">
+              <div>
+                <h2>Radar plot (each state)</h2>
+                <select id="stateName"></select>
+                <div id="radar"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="row">
+                <div>
+                  <h2>Parallel Coordinates</h2>
+                  <select>
+                    <option value="inmate_pcp">Inmate</option>
+                    <option value="public_pcp">Public</option>
+                  </select>
+                  <div id="pcp"></div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <h2 style="display: inline-block; text-align: center;">Scatterplot Matrix</h2>
+            <select style="display: inline-block; text-align: center;">
+              <option value="inmate_matrix">Inmate</option>
+              <option value="public_matrix">Public</option>
+              <option value="officer_matrix">Officer</option>
+            </select>
+            <div id="matrix"></div>
+          </div>
+        </div>
+  
+
+        
+        <!-- <div class="row">
+          <div class="col">
+            <div class="row">
+              <h2>Scatterplot Matrix</h2>
+              <select>
+                <option value="inmate_matrix">Inmate</option>
+                <option value="public_matrix">Public</option>
+                <option value="officer_matrix">Officer</option>
+              </select>
+            </div>
+            <div id="matrix"></div>
+          </div>
+             
+          
+         
+          <div class="col">
+            <div class="row">
+              <h2>Parallel Coordinates</h2>
+              <select>
+                <option value="inmate_pcp">Inmate</option>
+                <option value="public_pcp">Public</option>
+              </select>
+            </div>
+
+            <div id="pcp"></div>
+          </div>
+        </div> -->
+
+      </div>
+    </div>
+  </div>
+
+    <!--
+      //  Overview
+      ///////////////////////////////////-->
+      <div class="page__style home">
+        <div class="page__description">
+          <div id="home">
+      
+            <div class="box"></div>
+      
+            <button class="btn_nav home_link">Overview</button>
+            <button class="btn_nav projects_link">Party</button>
+            <button class="btn_nav skills_link">Facility</button>
+            <button class="btn_nav about_link">Group</button>
+            <button class="btn_nav contact_link">Correlation</button>
+
+            <h1>Overview</h1>
+            
+            
+    
+            <div id="overview"></div>
+          </div>
+        </div>
+      </div>
+  
+
+
+  <!------------------------------------------------------------------------------------->
+
+  
+  <!-- <div style="width: 100%; height: auto; display:flex;">
+    <div>
+      <select>
+        <option value="overview">Overview of COVID in US prison</option>
+        <option value="ic">Inmate cases</option>
+        <option value="id">Inmate deaths</option>
+        <option value="oc">Officer cases</option>
+        <option value="od">Officer deaths</option>
+        <option value="diff_ip">Difference in inmate and public</option>
+        <option value="diff_io">Difference in inmate and officer</option>
+      </select>
+      <div id="map"></div>
+    </div>
+    <div>
+      <select>
+        <option value="inmate_death_rate">Inmate death rate</option>
+        <option value="inmate_pos_rate">Inmate positive rate</option>
+      </select>
+      <div id="bar"></div>
+    </div>
+  </div>
+
+  <div style="width: 100%; height: auto; display:flex;">
+    <div>
+      <select>
+        <option value="pcp_public">Public correlations</option>
+        <option value="pcp_inmate">Inmate correlations</option>
+      </select>
+      <div id="correlation"></div>
+    </div>
+    <div>
+      <select>
+        <option value="inmate_death_pie">Inmate deaths</option>
+        <option value="inmate_pos_pie">Inmate positive cases</option>
+        <option value="officer_death_pie">Officer deaths</option>
+        <option value="officer_pos_pie">Officer positive cases</option>
+      </select>
+      <div id="pie"></div>
+    </div>
+  </div> -->
+  
+  <script src="./templates/html_james/overview.js"></script>
+  <script src="./templates/html_james/matrix.js"></script>
+  <script src="./templates/html_james/scatterplot.js"></script>
+  <script src="./templates/html_yashasvi/bar.js"></script>
+  <script src="./templates/html_henry/inmate_officer.js"></script>
+  <script src="./templates/html_esha/map.js"></script>
+  <script src="./templates/html_kevin/pcp_radar.js"></script>
+
+  <script>
+    $(document).ready(function(){
+
+      animation.init();
+
+      Overview("overview")
+      Map_graphs.demo_heatmap("heatmap1");
+      Map_graphs.repub_heatmap("heatmap2");
+      Scatterplot("scatterplot");
+      Map_graphs.affl_map("party_map");
+
+
+        $("select").change(function(){
+            $(this).find("option:selected").each(function(){
+                var optionValue = $(this).attr("value");
+                if (optionValue === "ic") {
+                  Inmate_officer.inmate_cases_choropleth_map("facility_map")
+                  Inmate_officer.inmate_cases_pie("facility_pie")
+                }
+                else if (optionValue === "id"){
+                  Inmate_officer.inmate_death_choropleth_map("facility_map")
+                  Inmate_officer.inmate_death_pie("facility_pie")
+                } 
+                else if (optionValue === "oc"){
+                  Inmate_officer.officer_cases_choropleth_map("facility_map")
+                  Inmate_officer.officer_cases_pie("facility_pie")
+                } 
+                else if (optionValue === "od"){
+                  Inmate_officer.officer_death_choropleth_map("facility_map")   
+                  Inmate_officer.officer_death_pie("facility_pie")
+                } 
+                else if (optionValue === "inmate_death_rate") Inmate_officer.inmate_death_bar("facility_bar")
+                else if (optionValue === "inmate_pos_rate") Inmate_officer.inmate_positive_rate_bar("facility_bar")
+
+
+                else if (optionValue === "i_vs_p"){
+                  Map_graphs.ip_map("difference_map")
+                  Bar.ip_bar("b_to_b")
+                } 
+                else if (optionValue === "i_vs_o"){
+                  Map_graphs.io_map("difference_map")
+                  Bar.io_bar("b_to_b")
+                } 
+                else if (optionValue === "overview") Overview("map")
+
+
+
+                else if (optionValue === "inmate_matrix") Matrix.inmate("matrix")
+                else if (optionValue === "public_matrix") Matrix.public("matrix")
+                else if (optionValue === "officer_matrix") Matrix.officer("matrix")
+                else if (optionValue === "inmate_pcp") Pcp_radar.pcp_inmate("pcp")
+                else if (optionValue === "public_pcp") Pcp_radar.pcp_public("pcp")
+
+            });
+        }).change();
+
+
+    });
+  </script>
+
+<script>
+  const dataset = Pcp_radar.radar_dataset()
+
+  selectStateName = document.getElementById('stateName');
+  for (let i = 0; i < dataset.length; i++){
+    let opt = document.createElement('option');
+    opt.value = dataset[i].state;
+    opt.innerHTML = dataset[i].state;
+    selectStateName.appendChild(opt);
+  }
+  $("#stateName").change(function(){
+    $(this).find("option:selected").each(function(){
+      var optionValue = $(this).attr("value");
+      stateName = optionValue
+
+      let radar = document.getElementById("radar")
+
+      while (radar.hasChildNodes()) {
+        radar.removeChild(radar.firstChild);
+      }
+      // Radius of radar chart
+      const r = 100
+      const margin = { left: 30, top: 30, right: 30, bottom: 30 }
+      // Need to handle the view box carefully, to ensure the plot is centered, surrounded by margins
+      const svg1 = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      // set width and height
+      svg1.setAttribute("width", "200");
+      svg1.setAttribute("height", "250");
+
+      const svg = d3.select(svg1)
+        .attr('viewBox',
+          `-${margin.left},
+          -${margin.top},
+          ${r * 2 + margin.left + margin.right},
+          ${r * 2 + margin.bottom + margin.top}`)
+
+      const dimensions = ['inmate_pos_rate', 'inmate_death_rate', 'inmate_vac_rate', 'public_vac_rate', 'public_death_rate', 'public_pos_rate']
+      
+      // Line generator for radial lines
+      const radialLine = d3.lineRadial()
+      
+      // Radar chart is a circle, the length of each axis is the radius of the circle
+      // Mapping 0 - 255 to 0 - r
+      const yScale = d3.scaleLinear()
+        .range([0, r])
+        .domain([0, 0.8])
+      
+      const ticks = [0.2, 0.4, 0.6, 0.8]
+      // One axis for each dimension
+      dimensions.forEach((dimension, i) => {
+        const g = svg.append('g')
+          .attr('stroke', 'black')
+          .attr('transform', `translate(${r}, ${r}) rotate(${i * 60 + 30})`)
+
+        if (i === 0 || i === 5){
+          g.append('g')
+            .call(d3.axisLeft(yScale).tickValues(ticks))
+            .attr('stroke', 'black')
+          g.append('g')
+            .call(d3.axisRight(yScale).tickFormat('').tickValues(ticks))
+            .attr('stroke', 'black')
+        }
+        else{
+          g.append('g')
+          .call(d3.axisLeft(yScale).tickValues(ticks))
+          .selectAll("text")
+            .attr('stroke', 'black')
+            .attr("transform", "translate(-32, 0) rotate(-180)" );
+          g.append('g')
+          .call(d3.axisRight(yScale).tickFormat('').tickValues(ticks))
+            .attr('stroke', 'black')
+        }
+    1 
+        // Add a text label for each axis, put it at the edge
+        // Again, this "text" element is inside the outer "g" element,
+        // and will be transformed to the right position with its parent element
+        if (i === 2 || i === 3){
+          g.append('text')
+            .text(dimension)
+            .attr('text-anchor', 'middle')
+            .attr('stroke', 'black')
+            .attr('font-size', '10px')
+            .attr('transform', `translate(0, -${r + 20}) rotate(-180)`)
+        }
+        else{
+          g.append('text')
+          .text(dimension)
+          .attr('text-anchor', 'middle')
+          .attr('stroke', 'black')
+            .attr('font-size', '10px')
+          .attr('transform', `translate(0, -${r + 10})`)
+        }
+        
+      })
+      svg.append('g')
+        .selectAll('path')
+        .data(dataset.filter(entry => entry.state === document.getElementById("stateName").value))
+        .enter()
+        .append('path')
+          .attr('d', d =>
+            radialLine([
+              d.inmate_pos_rate,
+              d.inmate_death_rate,
+              d.inmate_vac_rate,
+              d.public_vac_rate,
+              d.public_death_rate,
+              d.public_pos_rate,
+              d.inmate_pos_rate // hp again to close the loop
+            ].map((v, i) => [Math.PI * 2 * i / 6, yScale(v) /* distance from the origin */])) 
+          )
+          // Move to the center
+          .attr('transform', `translate(${r}, ${r}) rotate(30)`)
+          .attr('stroke', 'SteelBlue')
+          .attr('stroke-width', 5)
+          .attr('fill', 'rgba(70, 130, 180, 0.3)')
+      
+      // Gird lines for references
+      svg.append('g')
+        .selectAll('path')
+        .data(ticks)
+        .enter()
+        .append('path')
+          .attr('d', d => radialLine(_.range(7).map((v, i) => [Math.PI * 2 * i / 6, yScale(d)])))
+          .attr('transform', `translate(${r}, ${r}) rotate(30)`)
+          .attr('stroke', 'black')
+          // .attr('opacity', 0.5)
+          .attr('fill', 'none')
+
+      svg.append('select')
+      radar.append(svg.node())
+    })
+  })
+</script>
+</body>
+</html>
